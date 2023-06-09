@@ -102,7 +102,6 @@ class OrderControllerTest {
     fun testUpdateOrder() {
         val orderId = 1L
         val orderRequest = OrderRequest(1L, LocalDate.now(), 25)
-        val orderToUpdate = Order(orderId, createRecipientWithId(1), orderRequest.deliveryDate, orderRequest.bananaQuantity, 25.0)
         val updatedOrder = Order(orderId, createRecipientWithId(1), orderRequest.deliveryDate, 50, null)
 
         `when`(recipientService.getRecipientById(orderRequest.recipientId)).thenReturn(createRecipientWithId(1))
